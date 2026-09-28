@@ -140,7 +140,7 @@ main { padding-block: 38px 64px; }
   .policy section { break-inside: avoid; }
 }
 
-/* Exact Figma wordmark: QJeLxafFi1FOKN75MOO5EI / 1213:182. */
+/* Figma wordmark with Nunito trademark: QJeLxafFi1FOKN75MOO5EI / 1698:200531. */
 .hero .wordmark { width: clamp(210px, 24vw, 290px); height: auto; }
 @media (max-width: 580px) {
   .hero .wordmark { width: 220px; margin-inline: auto; }
