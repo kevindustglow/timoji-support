@@ -51,7 +51,7 @@ Privacy URL 填在 App 的 **App Privacy**；Support URL 填在 iOS 版本的 **
 
 ## 隱私內容依據與維護
 
-App 部分依目前 Timoji 1.0.1 的隱私文件與 App 內 `PrivacyPolicyContent` 撰寫；客服收發與一般已結案信件保留一年，依 Kevin 提供的營運規則。此網站另外揭露 GitHub Pages 主機記錄訪客 IP 的行為，沒有把網站主機資料和 App 本機資料混為一談。[GitHub Pages 資料收集說明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection)。
+App 部分依目前 timoji 1.5.1 的隱私文件與 App 內 `PrivacyPolicyContent` 撰寫；客服收發與一般已結案信件保留一年，依 Kevin 提供的營運規則。此網站另外揭露 GitHub Pages 主機記錄訪客 IP 的行為，沒有把網站主機資料和 App 本機資料混為一談。[GitHub Pages 資料收集說明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection)。
 
 營運者：Chiang Chien Chu (Studio Kí.)，Taiwan。Privacy / Support：kevin926@me.com。品牌名稱一律使用 Unicode `í`（U+00ED）。
 
@@ -60,3 +60,7 @@ App 部分依目前 Timoji 1.0.1 的隱私文件與 App 內 `PrivacyPolicyConten
 修改檔案並提交到 `main` 後，Pages 會重新發布；以 Actions 和正式 URL 驗證更新結果。
 
 首頁 wordmark 依 Kevin 指定，直接匯出自 [Figma node 1213:182](https://www.figma.com/design/QJeLxafFi1FOKN75MOO5EI/Timoji?node-id=1213-182)，保留原始向量與比例。
+
+## 繁中在地化
+
+首頁、支援、隱私權各有 `-zh-Hant.html` 對應頁。頁首可切換同一頁的語言，繁中內部連結保持語系，原英文網址不變。兩個語系的隱私權內容應同步維護。
