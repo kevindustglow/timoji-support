@@ -1,0 +1,77 @@
+/* Homepage only. Privacy and Support continue to use styles.css unchanged. */
+.home-page::before { opacity: .65; }
+.home-page .eyebrow { letter-spacing: .08em; }
+.home-page .hero { position: relative; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); padding: 48px 64px; gap: 56px; }
+.home-page .hero-copy { min-width: 0; }
+.home-page .tagline { max-width: 450px; }
+.home-page .intro { max-width: 410px; }
+.home-page .hero .button { margin-top: 28px; padding-inline: 20px; gap: 20px; box-shadow: none; }
+.product-preview { margin: 0; width: min(100%, 254px); justify-self: center; }
+.product-preview > video { display: block; width: 100%; height: auto; aspect-ratio: 886 / 1920; border: 1px solid #e8e1eb; border-radius: 24px; box-shadow: 0 8px 24px #53436708; }
+.home-section { margin-top: 48px; scroll-margin-top: 28px; }
+.home-page h2 { margin-top: 14px; font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; letter-spacing: -.04em; line-height: 1.3; text-wrap: balance; }
+.section-heading { margin-bottom: 40px; text-align: center; }
+.feature-grid { padding: 0; margin: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.feature-card { min-width: 0; }
+.feature-visual { height: 250px; padding: 16px; background: #f8f6fa; border-radius: 22px; display: grid; grid-template-rows: minmax(0, 1fr); place-items: center; overflow: hidden; }
+.feature-visual img { width: 100%; height: 100%; min-height: 0; object-fit: contain; border-radius: 16px; }
+.feature-copy { padding: 24px 8px 0; }
+.feature-number { color: var(--accent); font-size: .75rem; font-weight: 600; letter-spacing: .1em; margin-bottom: 10px; }
+.home-page h3 { font-size: 1.125rem; font-weight: 600; letter-spacing: -.025em; line-height: 1.45; }
+.feature-copy > p:last-child { color: var(--muted); font-size: .9375rem; margin-top: 10px; }
+.plan-note { color: var(--muted); font-size: .8125rem; width: 100%; margin: 20px 0 0; }
+.maker { text-align: center; }
+.maker-message { padding: 40px 32px; }
+.maker h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+.maker-copy { max-width: 680px; margin: 20px auto 16px; color: var(--muted); text-wrap: balance; }
+.maker-copy span { display: block; text-wrap: balance; }
+.maker .home-links { margin-top: 40px; text-align: left; }
+@media (max-width: 800px) {
+ .home-page .hero { padding: 40px 32px; gap: 28px; }
+ .product-preview { width: min(100%, 220px); }
+ .feature-grid { grid-template-columns: 1fr; gap: 20px; }
+ .feature-card { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+ .feature-visual { height: 260px; }
+ .feature-copy { padding: 20px 24px; }
+}
+@media (max-width: 580px) {
+ .home-page .site-header { flex-wrap: wrap; row-gap: 10px; }
+ .home-page .hero { grid-template-columns: 1fr; padding: 36px 24px 28px; gap: 34px; }
+ .home-page .hero-copy { grid-row: auto; }
+ .home-page .tagline { max-width: 340px; margin-inline: auto; }
+ .product-preview { width: 224px; max-width: 100%; }
+ .home-section { margin-top: 48px; }
+ .section-heading { margin-bottom: 28px; }
+ .feature-grid { gap: 36px; }
+ .feature-card { grid-template-columns: 1fr; }
+ .feature-visual { height: 230px; padding: 16px 24px; }
+ .feature-copy { padding: 20px 8px 0; }
+ .feature-number { margin-bottom: 6px; }
+ .feature-copy > p:last-child { margin-top: 8px; }
+ .maker-message { padding: 28px 22px; }
+ .maker .home-links { margin-top: 24px; }
+}
+@media (forced-colors: active) {
+ .product-preview > video, .comparison { border: 1px solid CanvasText; }
+}
+
+.feature-label { font-size: .8125rem; color: var(--muted); }
+.feature-section { padding: 48px 40px; }
+.comparison { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: .9375rem; }
+.comparison th, .comparison td { padding: 20px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.comparison th:first-child { width: 44%; text-align: left; padding-left: 0; }
+.comparison thead th { font-weight: 600; color: var(--ink); text-align: center; }
+.comparison thead th:first-child { color: var(--muted); font-size: .8125rem; font-weight: 400; }
+.comparison thead th span { display: block; font-size: .75rem; color: var(--muted); font-weight: 400; margin-top: 6px; }
+.comparison tbody th { font-weight: 400; }
+.comparison td { text-align: center; color: var(--accent); }
+.comparison .not-included { color: var(--muted); }
+@media (max-width: 580px) {
+ .feature-section { padding: 32px 20px; }
+ .comparison { font-size: .8125rem; }
+ .comparison th, .comparison td { padding: 16px 8px; overflow-wrap: anywhere; }
+ .comparison th:first-child { width: 40%; }
+}
+
+.home-page .app-icon { width: 168px; height: auto; border-radius: 38px; box-shadow: 0 4px 18px #39304c0a; }
+@media (max-width: 580px) { .home-page .app-icon { width: 144px; margin-inline: auto; border-radius: 33px; } }

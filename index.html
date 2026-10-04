@@ -11,8 +11,9 @@
   <link rel="alternate icon" href="assets/timoji-mark.png" type="image/png">
   <link rel="alternate" hreflang="zh-Hant" href="index-zh-Hant.html">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header shell">
     <a class="studio" href="index.html" aria-label="Studio Kí. — Timoji home">Studio Kí.</a>
@@ -26,13 +27,75 @@
   <main id="main" class="shell" tabindex="-1">
     <section class="hero paper" aria-labelledby="home-title">
       <div class="hero-copy">
-        <p class="eyebrow">A little clarity. A little calm.</p>
-        <h1 id="home-title"><img class="wordmark" src="assets/timoji-wordmark.svg?v=a1d79b4" width="658" height="205" alt="Timoji"></h1>
+        <p class="eyebrow">A visual timer for children</p>
+        <h1 id="home-title"><img class="app-icon" src="assets/home/app-icon.png" width="1024" height="1024" alt="Timoji" fetchpriority="high"></h1>
         <p class="tagline">See time. One thing at a time. Choose what’s next.</p>
-        <p class="intro">A gentle visual timer that helps children understand and plan their time.</p>
+        <p class="intro">A gentle visual timer with activity stickers. See time, pick one thing, and choose what comes next — together.</p>
+        <a class="button" href="#how-it-works">Explore Timoji <span aria-hidden="true">↓</span></a>
       </div>
-      <img class="brand-art" src="assets/timoji-mark.svg" width="256" height="256" alt="" fetchpriority="high">
+      <figure class="product-preview">
+        <video controls playsinline preload="metadata" poster="assets/home/preview-en.webp" width="886" height="1920" aria-label="Timoji product preview">
+          <source src="assets/home/preview-en.mp4" type="video/mp4">
+          <a href="assets/home/preview-en.mp4">Download the video</a>
+        </video>
+      </figure>
     </section>
+
+    <section id="how-it-works" class="home-section feature-section paper" aria-labelledby="how-title" tabindex="-1">
+      <div class="section-heading"><p class="feature-label">Included in Free</p><h2 id="how-title">Everyday essentials, included.</h2></div>
+      <ul class="feature-grid">
+        <li class="feature-card">
+          <div class="feature-visual"><img src="assets/home/core-01-en.webp" width="720" height="720" alt="A 15-minute visual timer with a building-block activity." loading="lazy"></div>
+          <div class="feature-copy"><p class="feature-number" aria-hidden="true">01</p><h3>No need to keep saying “Hurry up.”</h3><p>Help kids see time, one thing at a time.</p></div>
+        </li>
+        <li class="feature-card">
+          <div class="feature-visual"><img src="assets/home/pick-en.webp" width="800" height="466" alt="Activity stickers and the GO button." loading="lazy"></div>
+          <div class="feature-copy"><p class="feature-number" aria-hidden="true">02</p><h3>Pick it. Start it.</h3><p>Choose an activity, set the time, and press Start.</p></div>
+        </li>
+        <li class="feature-card">
+          <div class="feature-visual"><img src="assets/home/next-en.webp" width="800" height="482" alt="Again and Next choices after an activity ends." loading="lazy"></div>
+          <div class="feature-copy"><p class="feature-number" aria-hidden="true">03</p><h3>Let kids choose what’s next</h3><p>One more time, or move on? Practice making their own choices.</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="home-section plus-features feature-section paper" aria-labelledby="plus-title">
+      <div class="section-heading"><p class="feature-label">Timoji Plus · One-time purchase</p><h2 id="plus-title">Make it a little more your own.</h2></div>
+      <ul class="feature-grid">
+        <li class="feature-card">
+          <div class="feature-visual"><img src="assets/home/core-04-en.webp" width="800" height="438" alt="Camera and Photos choices for a custom activity." loading="lazy"></div>
+          <div class="feature-copy"><p class="feature-number" aria-hidden="true">04</p><h3>Make your own stickers.</h3><p>Use your own pictures to make familiar activities.</p></div>
+        </li>
+        <li class="feature-card">
+          <div class="feature-visual"><img src="assets/home/core-05-en.webp" width="800" height="731" alt="Activities arranged within a 60-minute timer." loading="lazy"></div>
+          <div class="feature-copy"><p class="feature-number" aria-hidden="true">05</p><h3>Some things don’t need to be rushed</h3><p>Up to 60 minutes, with more room for things that take time.</p></div>
+        </li>
+        <li class="feature-card">
+          <div class="feature-visual"><img src="assets/home/plus-en.webp" width="800" height="614" alt="Saved Daily Flow activities and their duration." loading="lazy"></div>
+          <div class="feature-copy"><p class="feature-number" aria-hidden="true">06</p><h3>Plan little routines together</h3><p>Set up familiar activities and start them again with one tap.</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="home-section" aria-labelledby="plans-title">
+      <div class="section-heading"><h2 id="plans-title">Choose your Timoji.</h2></div>
+      <table class="comparison" aria-labelledby="plans-title">
+        <thead><tr><th scope="col">Features</th><th scope="col">Timoji<span>Free</span></th><th scope="col">Timoji Plus<span>One-time purchase</span></th></tr></thead>
+        <tbody><tr><th scope="row">Visual timers</th><td>15 / 30 min</td><td>15 / 30 / 60 min</td></tr>
+<tr><th scope="row">Built-in activity stickers</th><td>All</td><td>All</td></tr>
+<tr><th scope="row">Multi-activity planning within 30 minutes</th><td><span aria-label="Included">✓</span></td><td><span aria-label="Included">✓</span></td></tr>
+<tr><th scope="row">Custom activity stickers</th><td><span class="not-included" aria-label="Not included">—</span></td><td><span aria-label="Included">✓</span></td></tr>
+<tr><th scope="row">Daily Flow</th><td><span class="not-included" aria-label="Not included">—</span></td><td><span aria-label="Included">✓</span></td></tr>
+<tr><th scope="row">Sounds and Live Activity</th><td><span aria-label="Included">✓</span></td><td><span aria-label="Included">✓</span></td></tr></tbody>
+      </table>
+      <p class="plan-note">Custom pictures can come from Photos or Camera. Apple Image Playground is offered only on supported devices and systems. Plus is a one-time in-app purchase, with no subscription; local pricing is shown in the app.</p>
+    </section>
+
+    <section class="home-section maker" aria-labelledby="maker-title">
+      <div class="maker-message paper">
+      <h2 id="maker-title">See time. Plan time. Own time.</h2>
+      <p class="maker-copy"><span>Make time visible. Take one thing at a time.</span><span>Plan together, with room for children to choose what comes next.</span></p>
+      </div>
     <div class="home-links">
       <a class="link-card" href="privacy.html">
         <strong>Privacy</strong>
@@ -45,6 +108,7 @@
         <span class="arrow" aria-hidden="true">↗</span>
       </a>
     </div>
+    </section>
   </main>
   <footer class="site-footer shell">
     <p>timoji™ by Studio Kí.</p>
