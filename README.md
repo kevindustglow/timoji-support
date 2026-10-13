@@ -63,3 +63,14 @@ App 部分依目前 timoji 1.5.1 的隱私文件與 App 內 `PrivacyPolicyConten
 ## 繁中在地化
 
 首頁、支援、隱私權各有 `-zh-Hant.html` 對應頁。頁首可切換同一頁的語言，繁中內部連結保持語系，原英文網址不變。兩個語系的隱私權內容應同步維護。
+
+## 首頁 App Store badge（2026-10-14）
+
+雙語首頁主要介紹下方放置官方黑色下載 badge，連到 App ID `6818863589`，並保留探索入口。Apple 公開 Lookup 已確認 bundle ID `com.studioki.timoji`／版本 1.5.2。Badge 高度 48 px，四周留白 12 px；每頁只用一次，頁尾保留品牌及 Apple 商標歸屬。
+
+圖檔原樣保存，來源：
+- English: https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83
+- 繁體中文: https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/zh-tw?size=250x83
+- 使用規範：https://developer.apple.com/app-store/marketing/guidelines/
+
+Figma 首頁代表 layout 尚未同步；本輪只修改網站，沒有 App UI 變更。
