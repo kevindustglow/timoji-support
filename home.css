@@ -93,12 +93,12 @@
 .home-page .hero h1 { font-size: clamp(1.4rem, 3.2vw, 2.5rem); letter-spacing: -.035em; margin-block: 20px 16px; }
 
 /* Official App Store artwork: 48 px high, with 12 px clear space on all sides. */
-.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; margin-inline-start: -12px; }
 .app-store-link { display: inline-flex; flex: 0 0 auto; padding: 12px; text-decoration: none; }
 .app-store-link img { width: auto; height: 48px; max-width: none; }
 .home-page .hero-actions .button { margin-top: 0; }
 .home-page .site-footer { flex-wrap: wrap; }
 .home-page .apple-credit { flex-basis: 100%; }
 @media (max-width: 580px) {
- .hero-actions { justify-content: center; }
+ .hero-actions { justify-content: center; margin-inline-start: 0; }
 }
