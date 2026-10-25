@@ -50,7 +50,7 @@ Privacy URL 填在 App 的 **App Privacy**；Support URL 填在 iOS 版本對應
 
 ## 隱私內容依據與維護
 
-App 部分依目前 timoji 1.5.1 的隱私文件與 App 內 `PrivacyPolicyContent` 撰寫；客服收發與一般已結案信件保留一年，依 Kevin 提供的營運規則。此網站另外揭露 GitHub Pages 主機記錄訪客 IP 的行為，沒有把網站主機資料和 App 本機資料混為一談。[GitHub Pages 資料收集說明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection)。
+App 部分依 timoji 1.5.3 的資料行為撰寫（活動紀錄只存在本機、可匯出／匯入／清除；時間到提醒透過 Apple AlarmKit 在裝置上排定鬧鐘）；客服收發與一般已結案信件保留一年，依 Kevin 提供的營運規則。此網站另外揭露 GitHub Pages 主機記錄訪客 IP 的行為，沒有把網站主機資料和 App 本機資料混為一談。[GitHub Pages 資料收集說明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection)。
 
 營運者：Chiang Chien Chu (Studio Kí.)，Taiwan。Privacy / Support：kevin926@me.com。App 品牌統一寫作 `timoji`；Studio Kí. 的 `í` 使用 Unicode U+00ED。檔名、路徑與程式識別名稱保留實際大小寫。
 
@@ -74,3 +74,13 @@ App 部分依目前 timoji 1.5.1 的隱私文件與 App 內 `PrivacyPolicyConten
 - 使用規範：https://developer.apple.com/app-store/marketing/guidelines/
 
 Figma 首頁代表 layout 尚未同步；本輪只修改網站，沒有 App UI 變更。
+
+## 1.5.3 更新（草稿，2026-10-25）
+
+分支 `draft/1.5.3-website`，等 App Store 送審完成、Kevin 確認後才合併到 `main`。
+
+- 首頁：60 分鐘移到免費功能（免費區改四欄，`home.css` 新增 `.feature-grid.four`）；Plus 改為自訂貼紙、日常流程、一起回顧；比較表更新。
+- 使用指南：依 1.5.3 計時器首頁、滑動切換 15／30／60、活動貼紙 sheet、日常流程（原「小日常」）、活動紀錄、時間到提醒全面改寫。
+- 隱私權：版本改 1.5.3、日常流程用語、活動紀錄可匯入、AlarmKit。合併前把「Last updated／更新日期」改成實際發布日。
+- 支援：用語更新。
+- `assets/home/history-*.webp` 暫用 Figma 設計稿（node 2438:243577／2454:72461）裁切；`plus-*.webp`、`core-05-*.webp`、`pick-*.webp` 與首頁影片仍是 1.5.2 畫面，等 1.5.3 App Store 截圖與影片完成後替換。
