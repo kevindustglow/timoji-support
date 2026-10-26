@@ -83,4 +83,4 @@ Figma 首頁代表 layout 尚未同步；本輪只修改網站，沒有 App UI �
 - 使用指南：依 1.5.3 計時器首頁、滑動切換 15／30／60、活動貼紙 sheet、日常流程（原「小日常」）、活動紀錄、時間到提醒全面改寫。
 - 隱私權：版本改 1.5.3、日常流程用語、活動紀錄可匯入、AlarmKit。合併前把「Last updated／更新日期」改成實際發布日。
 - 支援：用語更新。
-- 1.6.0 上線（2026-10-26）：`core-01`、`pick`、`core-05`、`core-04`、`plus`、`history` 都已換成 1.6.0 App Store 截圖裁切（final-screenshots iPhone 01／04／05／06／07）；`next-*.webp` 沒有對應新截圖，沿用舊圖。首頁影片與封面仍是 1.5.2，等 1.6.0 App Preview 影片再換。
+- 1.6.0 上線（2026-10-26）：`core-01`、`pick`、`core-05`、`core-04`、`plus`、`history` 都已換成 1.6.0 App Store 截圖裁切（final-screenshots iPhone 01／04／05／06／07）；`next-*.webp` 沒有對應新截圖，沿用舊圖。首頁影片與封面已換成 1.6.0 iPhone App Preview（qa/appstore-1.5.3-capture-2026-10-25/videos）。
