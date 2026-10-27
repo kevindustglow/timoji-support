@@ -52,7 +52,7 @@ Privacy URL 填在 App 的 **App Privacy**；Support URL 填在 iOS 版本對應
 
 App 部分依 timoji 1.5.3 的資料行為撰寫（活動紀錄只存在本機、可匯出／匯入／清除；時間到提醒透過 Apple AlarmKit 在裝置上排定鬧鐘）；客服收發與一般已結案信件保留一年，依 Kevin 提供的營運規則。此網站另外揭露 GitHub Pages 主機記錄訪客 IP 的行為，沒有把網站主機資料和 App 本機資料混為一談。[GitHub Pages 資料收集說明](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection)。
 
-營運者：Chiang Chien Chu (Studio Kí.)，Taiwan。Privacy / Support：kevin926@me.com。App 品牌統一寫作 `timoji`；Studio Kí. 的 `í` 使用 Unicode U+00ED。檔名、路徑與程式識別名稱保留實際大小寫。
+營運者：Chiang Chien Chu (Studio Kí.)，Taiwan。Privacy / Support：heytimoji@gmail.com。App 品牌統一寫作 `timoji`；Studio Kí. 的 `í` 使用 Unicode U+00ED。檔名、路徑與程式識別名稱保留實際大小寫。
 
 日後變更 App 資料行為、客服流程、主機或新增服務時，請同步更新 `privacy.html`、`privacy-zh-Hant.html` 與更新日期，並同步核對 App 內 policy 和 App Store Connect 的 App Privacy 回覆。本文沒有宣稱全面法規合規或保證 Apple 審核通過。
 
@@ -84,3 +84,4 @@ Figma 首頁代表 layout 尚未同步；本輪只修改網站，沒有 App UI �
 - 隱私權：版本改 1.5.3、日常流程用語、活動紀錄可匯入、AlarmKit。合併前把「Last updated／更新日期」改成實際發布日。
 - 支援：用語更新。
 - 1.6.0 上線（2026-10-26）：`core-01`、`pick`、`core-05`、`core-04`、`plus`、`history` 都已換成 1.6.0 App Store 截圖裁切（final-screenshots iPhone 01／04／05／06／07）；`next-*.webp` 沒有對應新截圖，沿用舊圖。首頁影片與封面已換成 1.6.0 iPhone App Preview（qa/appstore-1.5.3-capture-2026-10-25/videos）。
+- 聯絡信箱更新（2026-10-27）：所有頁面改用 heytimoji@gmail.com；隱私權頁的郵件服務由 Apple／iCloud Mail 改為 Gmail（Google），更新日期改為 2026-10-27。
