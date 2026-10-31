@@ -33,6 +33,7 @@ SVG 是現有 timoji 品牌資產；PNG 作為 favicon 的相容備用。
 
 - 顏色只寫在 `assets/studio-ki.css` 的 `:root` token 區塊（淺色、`prefers-color-scheme: dark` 深色）；元件只用語意 token。
 - Header 依 Studio Kí.「Website header」規格：88px（<768px 為 64px）、Lockup C 28px 高、Inter 16/24/600 導覽。
+- 主題：預設跟隨系統；header 右側月亮／太陽按鈕可手動切換，選擇存在瀏覽器 localStorage（`theme`），以 `html[data-theme]` 套用深色 token。這只存在訪客自己的瀏覽器，不會傳到任何伺服器。
 - Nunito 只用在首頁主標、tagline、區塊標題與子頁 h1；其餘一律 Inter，繁中頁 Noto Sans TC 優先。
 - 字體從 Google Fonts 下載後自架在 `assets/fonts/`，因為隱私權頁寫明「網站沒有外部字體」。Noto Sans TC 只含網站目前用到的字；**新增中文文案後要重新產生子集**（步驟見 `assets/fonts/README.md`），否則新字會退回系統字體。
 
