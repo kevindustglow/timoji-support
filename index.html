@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/studio-ki.css">
   <script>(function(d){d.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}})(document.documentElement)</script>
   <script src="assets/site-header.js" defer></script>
+  <script src="assets/feature-row.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,58 +57,61 @@
       </figure>
     </section>
 
-    <section id="how-it-works" class="home-section feature-section" aria-labelledby="how-title" tabindex="-1">
-      <div class="section-heading"><p class="feature-label">Included in Free</p><h2 id="how-title">Everyday essentials, included.</h2></div>
-      <ul class="feature-grid four">
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/core-01-en.webp" width="720" height="720" alt="A 15-minute visual timer with a bunny sticker." loading="lazy"></div>
-          <div class="feature-copy"><h3>No need to keep saying “Hurry up.”</h3><p>Help your child see time, one thing at a time.</p></div>
+    <section id="how-it-works" class="home-section fc-section" aria-labelledby="how-title" tabindex="-1">
+      <div class="fc-head"><div><p class="feature-label">Included in Free</p><h2 id="how-title">Everyday essentials, included.</h2></div></div>
+      <ul class="fc-track" id="how-track" tabindex="0" aria-labelledby="how-title">
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">No need to keep saying “Hurry up.”</h3><p class="fc-body">Help your child see time, one thing at a time.</p></div>
+          <div class="fc-media"><img src="assets/home/core-01-en.webp" width="720" height="720" alt="A 15-minute visual timer with a bunny sticker." loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/pick-en.webp" width="800" height="453" alt="Activity stickers and the GO button." loading="lazy"></div>
-          <div class="feature-copy"><h3>Pick a sticker. Start together.</h3><p>Tap a sticker, drag the ring to set the time, then tap GO.</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Pick a sticker. Start together.</h3><p class="fc-body">Tap a sticker, drag the ring to set the time, then tap GO.</p></div>
+          <div class="fc-media"><img src="assets/home/pick-en.webp" width="800" height="453" alt="Activity stickers and the GO button." loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/next-en.webp" width="800" height="482" alt="Again and Next choices after an activity ends." loading="lazy"></div>
-          <div class="feature-copy"><h3>Choose what comes next.</h3><p>Again or Next? Plan together, and let your child choose.</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Choose what comes next.</h3><p class="fc-body">Again or Next? Plan together, and let your child choose.</p></div>
+          <div class="fc-media"><img src="assets/home/next-en.webp" width="800" height="482" alt="Again and Next choices after an activity ends." loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/core-05-en.webp" width="800" height="615" alt="Several activities arranged in a 60-minute timer." loading="lazy"></div>
-          <div class="feature-copy"><h3>Some things don’t need to be rushed.</h3><p>Up to 60 minutes, for things that take time.</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Some things don’t need to be rushed.</h3><p class="fc-body">Up to 60 minutes, for things that take time.</p></div>
+          <div class="fc-media"><img src="assets/home/core-05-en.webp" width="800" height="615" alt="Several activities arranged in a 60-minute timer." loading="lazy"></div>
         </li>
       </ul>
+      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="Previous" aria-controls="how-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="Next" aria-controls="how-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
     </section>
 
-    <section class="home-section plus-features feature-section" aria-labelledby="plus-title">
-      <div class="section-heading"><p class="feature-label">timoji Plus · One-time In-App Purchase</p><h2 id="plus-title">Make it a little more your own.</h2></div>
-      <ul class="feature-grid">
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/core-04-en.webp" width="800" height="904" alt="The sticker sheet with New sticker and your activity stickers." loading="lazy"></div>
-          <div class="feature-copy"><h3>Make your own stickers.</h3><p>Turn your own photos into activity stickers.</p></div>
+    <section class="home-section plus-features fc-section" aria-labelledby="plus-title">
+      <div class="fc-head"><div><p class="feature-label">timoji Plus · One-time In-App Purchase</p><h2 id="plus-title">Make it a little more your own.</h2></div></div>
+      <ul class="fc-track" id="plus-track" tabindex="0" aria-labelledby="plus-title">
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Make your own stickers.</h3><p class="fc-body">Turn your own photos into activity stickers.</p></div>
+          <div class="fc-media"><img src="assets/home/core-04-en.webp" width="800" height="904" alt="The sticker sheet with New sticker and your activity stickers." loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/plus-en.webp" width="800" height="857" alt="A saved routine with its activities and times." loading="lazy"></div>
-          <div class="feature-copy"><h3>Plan a routine together.</h3><p>Set up a routine once. Use it any day.</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Plan a routine together.</h3><p class="fc-body">Set up a routine once. Use it any day.</p></div>
+          <div class="fc-media"><img src="assets/home/plus-en.webp" width="800" height="857" alt="A saved routine with its activities and times." loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/history-en.webp" width="746" height="987" alt="This week’s activity time, with a daily bar chart." loading="lazy"></div>
-          <div class="feature-copy"><h3>Look back together.</h3><p>See the activities you’ve done together.</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Look back together.</h3><p class="fc-body">See the activities you’ve done together.</p></div>
+          <div class="fc-media"><img src="assets/home/history-en.webp" width="746" height="987" alt="This week’s activity time, with a daily bar chart." loading="lazy"></div>
         </li>
       </ul>
+      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="Previous" aria-controls="plus-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="Next" aria-controls="plus-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
     </section>
 
-    <section class="home-section feature-section" aria-labelledby="new-title">
-      <div class="section-heading"><p class="feature-label">New in 1.7.0</p><h2 id="new-title">Ready when you are.</h2></div>
-      <ul class="feature-grid two">
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/widgets-en.webp" width="640" height="965" alt="timoji widgets on the Home Screen, with favorite stickers and a routine." loading="lazy"></div>
-          <div class="feature-copy"><h3>Start from your Home Screen.</h3><p>Tap a sticker on the widget to start. Routines widget in Plus.</p></div>
+    <section class="home-section fc-section" aria-labelledby="new-title">
+      <div class="fc-head"><div><p class="feature-label">New in 1.7.0</p><h2 id="new-title">Ready when you are.</h2></div></div>
+      <ul class="fc-track" id="new-track" tabindex="0" aria-labelledby="new-title">
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Start from your Home Screen.</h3><p class="fc-body">Tap a sticker on the widget to start. Routines widget in Plus.</p></div>
+          <div class="fc-media"><img src="assets/home/widgets-en.webp" width="640" height="965" alt="timoji widgets on the Home Screen, with favorite stickers and a routine." loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/duo-en.webp" width="800" height="617" alt="iPhone Duo folded like a book, with the timer on one side and stickers on the other." loading="lazy"></div>
-          <div class="feature-copy"><h3>Fold it like a book.</h3><p>On iPhone Duo, see the time on one side and plan on the other.</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">Fold it like a book.</h3><p class="fc-body">On iPhone Duo, see the time on one side and plan on the other.</p></div>
+          <div class="fc-media"><img src="assets/home/duo-en.webp" width="800" height="617" alt="iPhone Duo folded like a book, with the timer on one side and stickers on the other." loading="lazy"></div>
         </li>
       </ul>
+      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="Previous" aria-controls="new-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="Next" aria-controls="new-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
     </section>
 
     <section class="home-section" aria-labelledby="plans-title">
@@ -152,13 +156,13 @@
         <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3 7.8 7.5 9.5 4.5-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.3 2.3 4.7-4.7"/></svg>
         <strong>Privacy</strong>
         <span>A clear look at your information.</span>
-        <span class="arrow" aria-hidden="true">↗</span>
+        <span class="fc-action" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4.5 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg></span>
       </a>
       <a class="link-card" href="support.html">
         <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="11" width="4" height="7" rx="2"/><rect x="17" y="11" width="4" height="7" rx="2"/><path d="M19 18c0 2-2 3-5 3h-2"/></svg>
         <strong>Support</strong>
         <span>A little help, when you need it.</span>
-        <span class="arrow" aria-hidden="true">↗</span>
+        <span class="fc-action" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4.5 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg></span>
       </a>
     </div>
     </section>

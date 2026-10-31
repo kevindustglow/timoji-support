@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="assets/studio-ki.css">
   <script>(function(d){d.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}})(document.documentElement)</script>
   <script src="assets/site-header.js" defer></script>
+  <script src="assets/feature-row.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">跳至主要內容</a>
@@ -56,58 +57,61 @@
       </figure>
     </section>
 
-    <section id="how-it-works" class="home-section feature-section" aria-labelledby="how-title" tabindex="-1">
-      <div class="section-heading"><p class="feature-label">免費功能</p><h2 id="how-title">日常需要的，已經準備好。</h2></div>
-      <ul class="feature-grid four">
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/core-01-zh-Hant.webp" width="720" height="720" alt="15 分鐘環形計時器與小兔子貼紙。" loading="lazy"></div>
-          <div class="feature-copy"><h3>不用一直說「快一點」</h3><p>陪孩子一次做好一件事，慢慢理解時間。</p></div>
+    <section id="how-it-works" class="home-section fc-section" aria-labelledby="how-title" tabindex="-1">
+      <div class="fc-head"><div><p class="feature-label">免費功能</p><h2 id="how-title">日常需要的，已經準備好。</h2></div></div>
+      <ul class="fc-track" id="how-track" tabindex="0" aria-labelledby="how-title">
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">不用一直說「快一點」</h3><p class="fc-body">陪孩子一次做好一件事，慢慢理解時間。</p></div>
+          <div class="fc-media"><img src="assets/home/core-01-zh-Hant.webp" width="720" height="720" alt="15 分鐘環形計時器與小兔子貼紙。" loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/pick-zh-Hant.webp" width="800" height="453" alt="活動貼紙與開始按鈕。" loading="lazy"></div>
-          <div class="feature-copy"><h3>選張貼紙，開始日常</h3><p>點一張貼紙，拖動圓環設定時間，再按開始。</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">選張貼紙，開始日常</h3><p class="fc-body">點一張貼紙，拖動圓環設定時間，再按開始。</p></div>
+          <div class="fc-media"><img src="assets/home/pick-zh-Hant.webp" width="800" height="453" alt="活動貼紙與開始按鈕。" loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/next-zh-Hant.webp" width="800" height="482" alt="活動結束後的再一次與下一個按鈕。" loading="lazy"></div>
-          <div class="feature-copy"><h3>自己決定下一步</h3><p>再一次，還是下一個？一起看選擇，讓孩子決定。</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">自己決定下一步</h3><p class="fc-body">再一次，還是下一個？一起看選擇，讓孩子決定。</p></div>
+          <div class="fc-media"><img src="assets/home/next-zh-Hant.webp" width="800" height="482" alt="活動結束後的再一次與下一個按鈕。" loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/core-05-zh-Hant.webp" width="800" height="615" alt="在 60 分鐘計時器裡安排多個活動。" loading="lazy"></div>
-          <div class="feature-copy"><h3>有些事，不需要趕</h3><p>最長 60 分鐘，給需要慢慢來的事多點空間。</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">有些事，不需要趕</h3><p class="fc-body">最長 60 分鐘，給需要慢慢來的事多點空間。</p></div>
+          <div class="fc-media"><img src="assets/home/core-05-zh-Hant.webp" width="800" height="615" alt="在 60 分鐘計時器裡安排多個活動。" loading="lazy"></div>
         </li>
       </ul>
+      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="上一個" aria-controls="how-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="下一個" aria-controls="how-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
     </section>
 
-    <section class="home-section plus-features feature-section" aria-labelledby="plus-title">
-      <div class="section-heading"><p class="feature-label">timoji Plus · App 內購買，一次買斷</p><h2 id="plus-title">多一點自己的樣子。</h2></div>
-      <ul class="feature-grid">
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/core-04-zh-Hant.webp" width="800" height="904" alt="貼紙選單裡的「新增貼紙」與活動貼紙。" loading="lazy"></div>
-          <div class="feature-copy"><h3>把熟悉的日常，做成貼紙</h3><p>用自己的照片，做成熟悉的活動貼紙。</p></div>
+    <section class="home-section plus-features fc-section" aria-labelledby="plus-title">
+      <div class="fc-head"><div><p class="feature-label">timoji Plus · App 內購買，一次買斷</p><h2 id="plus-title">多一點自己的樣子。</h2></div></div>
+      <ul class="fc-track" id="plus-track" tabindex="0" aria-labelledby="plus-title">
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">把熟悉的日常，做成貼紙</h3><p class="fc-body">用自己的照片，做成熟悉的活動貼紙。</p></div>
+          <div class="fc-media"><img src="assets/home/core-04-zh-Hant.webp" width="800" height="904" alt="貼紙選單裡的「新增貼紙」與活動貼紙。" loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/plus-zh-Hant.webp" width="800" height="876" alt="日常流程的活動順序與各自的時間。" loading="lazy"></div>
-          <div class="feature-copy"><h3>一起安排日常流程</h3><p>把日常流程一次安排好。</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">一起安排日常流程</h3><p class="fc-body">把日常流程一次安排好。</p></div>
+          <div class="fc-media"><img src="assets/home/plus-zh-Hant.webp" width="800" height="876" alt="日常流程的活動順序與各自的時間。" loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/history-zh-Hant.webp" width="746" height="987" alt="本週活動總時間與每日長條圖。" loading="lazy"></div>
-          <div class="feature-copy"><h3>一起回顧</h3><p>回頭看看我們一起完成的活動。</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">一起回顧</h3><p class="fc-body">回頭看看我們一起完成的活動。</p></div>
+          <div class="fc-media"><img src="assets/home/history-zh-Hant.webp" width="746" height="987" alt="本週活動總時間與每日長條圖。" loading="lazy"></div>
         </li>
       </ul>
+      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="上一個" aria-controls="plus-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="下一個" aria-controls="plus-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
     </section>
 
-    <section class="home-section feature-section" aria-labelledby="new-title">
-      <div class="section-heading"><p class="feature-label">1.7.0 新功能</p><h2 id="new-title">想開始，隨時都可以。</h2></div>
-      <ul class="feature-grid two">
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/widgets-zh-Hant.webp" width="640" height="965" alt="主畫面上的 timoji 小工具，顯示我的最愛貼紙與日常流程。" loading="lazy"></div>
-          <div class="feature-copy"><h3>從主畫面直接開始。</h3><p>點小工具上的貼紙就能開始。日常流程小工具為 Plus 功能。</p></div>
+    <section class="home-section fc-section" aria-labelledby="new-title">
+      <div class="fc-head"><div><p class="feature-label">1.7.0 新功能</p><h2 id="new-title">想開始，隨時都可以。</h2></div></div>
+      <ul class="fc-track" id="new-track" tabindex="0" aria-labelledby="new-title">
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">從主畫面直接開始。</h3><p class="fc-body">點小工具上的貼紙就能開始。日常流程小工具為 Plus 功能。</p></div>
+          <div class="fc-media"><img src="assets/home/widgets-zh-Hant.webp" width="640" height="965" alt="主畫面上的 timoji 小工具，顯示我的最愛貼紙與日常流程。" loading="lazy"></div>
         </li>
-        <li class="feature-card">
-          <div class="feature-visual"><img src="assets/home/duo-zh-Hant.webp" width="800" height="617" alt="摺成書本的 iPhone Duo，一邊是時間環，一邊是貼紙。" loading="lazy"></div>
-          <div class="feature-copy"><h3>摺成書本，邊看邊安排。</h3><p>在 iPhone Duo 上，一邊看時間，一邊安排下一步。</p></div>
+        <li class="fc">
+          <div class="fc-copy"><h3 class="fc-title">摺成書本，邊看邊安排。</h3><p class="fc-body">在 iPhone Duo 上，一邊看時間，一邊安排下一步。</p></div>
+          <div class="fc-media"><img src="assets/home/duo-zh-Hant.webp" width="800" height="617" alt="摺成書本的 iPhone Duo，一邊是時間環，一邊是貼紙。" loading="lazy"></div>
         </li>
       </ul>
+      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="上一個" aria-controls="new-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="下一個" aria-controls="new-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
     </section>
 
     <section class="home-section" aria-labelledby="plans-title">
@@ -152,13 +156,13 @@
         <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3 7.8 7.5 9.5 4.5-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.3 2.3 4.7-4.7"/></svg>
         <strong>隱私權</strong>
         <span>清楚了解你的資料如何處理。</span>
-        <span class="arrow" aria-hidden="true">↗</span>
+        <span class="fc-action" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4.5 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg></span>
       </a>
       <a class="link-card" href="support-zh-Hant.html">
         <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="11" width="4" height="7" rx="2"/><rect x="17" y="11" width="4" height="7" rx="2"/><path d="M19 18c0 2-2 3-5 3h-2"/></svg>
         <strong>支援</strong>
         <span>需要時，給你一點幫助。</span>
-        <span class="arrow" aria-hidden="true">↗</span>
+        <span class="fc-action" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4.5 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg></span>
       </a>
     </div>
     </section>
