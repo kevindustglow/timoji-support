@@ -16,6 +16,7 @@
   <script>(function(d){d.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t)}catch(e){}})(document.documentElement)</script>
   <script src="assets/site-header.js" defer></script>
   <script src="assets/feature-row.js" defer></script>
+  <script src="assets/product-nav.js" defer></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main">跳至主要內容</a>
@@ -35,8 +36,35 @@
       <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="選單"><svg class="icon-menu" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M3 5.5h14M3 10h14M3 14.5h14"/></svg><svg class="icon-close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
     </div>
   </header>
+  <nav class="product-nav" aria-label="timoji">
+    <div class="product-nav__inner">
+      <a class="product-nav__name" href="#top">timoji</a>
+      <ul class="product-nav__links" id="product-nav-links">
+        <li><a href="#how-it-works">免費</a></li>
+        <li><a href="#plus">Plus</a></li>
+        <li><a href="#compare">比較</a></li>
+        <li><a href="guide-zh-Hant.html">使用指南</a></li>
+      </ul>
+      <a class="product-nav__cta" href="https://apps.apple.com/app/id6818863589?l=zh-Hant">下載</a>
+      <button class="product-nav__toggle" type="button" aria-expanded="false" aria-controls="product-nav-links" aria-label="段落"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 7.5 10 12.5l5-5"/></svg></button>
+    </div>
+  </nav>
   <main id="main" class="shell" tabindex="-1">
     <section class="hero" aria-labelledby="home-title">
+      <div class="ki-pills ki-pills--hero" aria-hidden="true">
+        <span class="ki-pill l5 bv" style="left:44px;top:36px"></span>
+        <span class="ki-pill l3 tb" style="left:116px;top:92px"></span>
+        <span class="ki-pill ki-pill--s l5 bv" style="left:36px;top:150px"></span>
+        <span class="ki-pill l2 ra" style="left:132px;top:196px"></span>
+        <span class="ki-pill ki-pill--s l3 ra" style="left:76px;top:232px"></span>
+        <span class="ki-pill ki-pill--s l2 tb" style="left:22px;top:260px"></span>
+        <span class="ki-pill l3 ra" style="right:120px;top:30px"></span>
+        <span class="ki-pill ki-pill--s l5 tb" style="right:44px;top:62px"></span>
+        <span class="ki-pill l5 bv" style="right:100px;top:132px"></span>
+        <span class="ki-pill ki-pill--s l2 bv" style="right:30px;top:178px"></span>
+        <span class="ki-pill l2 ra" style="right:150px;top:248px"></span>
+        <span class="ki-pill ki-pill--s l3 bv" style="right:52px;top:244px"></span>
+      </div>
       <div class="hero-copy">
         <div class="home-brand"><img class="app-icon" src="assets/home/app-icon.png" width="1024" height="1024" alt="timoji" fetchpriority="high"></div>
         <h1 id="home-title">timoji · 時光貼貼</h1>
@@ -48,11 +76,11 @@
           </a>
           <a class="button" href="#how-it-works">探索 timoji <span aria-hidden="true">↓</span></a>
         </div>
+        <p class="hero-video-link"><a href="assets/home/preview-zh-Hant.mp4">下載影片</a></p>
       </div>
       <figure class="product-preview">
         <video controls playsinline preload="metadata" poster="assets/home/preview-zh-Hant.webp" width="886" height="1920" aria-label="timoji 產品介紹影片">
           <source src="assets/home/preview-zh-Hant.mp4" type="video/mp4">
-          <a href="assets/home/preview-zh-Hant.mp4">下載影片</a>
         </video>
       </figure>
     </section>
@@ -80,43 +108,41 @@
       <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="上一個" aria-controls="how-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="下一個" aria-controls="how-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
     </section>
 
-    <section class="home-section plus-features fc-section" aria-labelledby="plus-title">
-      <div class="fc-head"><div><p class="feature-label">timoji Plus · App 內購買，一次買斷</p><h2 id="plus-title">多一點自己的樣子。</h2></div></div>
-      <ul class="fc-track" id="plus-track" tabindex="0" aria-labelledby="plus-title">
-        <li class="fc">
-          <div class="fc-copy"><h3 class="fc-title">把熟悉的日常，做成貼紙</h3><p class="fc-body">用自己的照片，做成熟悉的活動貼紙。</p></div>
-          <div class="fc-media"><img src="assets/home/core-04-zh-Hant.webp" width="800" height="904" alt="貼紙選單裡的「新增貼紙」與活動貼紙。" loading="lazy"></div>
-        </li>
-        <li class="fc">
-          <div class="fc-copy"><h3 class="fc-title">一起安排日常流程</h3><p class="fc-body">把日常流程一次安排好。</p></div>
-          <div class="fc-media"><img src="assets/home/plus-zh-Hant.webp" width="800" height="876" alt="日常流程的活動順序與各自的時間。" loading="lazy"></div>
-        </li>
-        <li class="fc">
-          <div class="fc-copy"><h3 class="fc-title">一起回顧</h3><p class="fc-body">回頭看看我們一起完成的活動。</p></div>
-          <div class="fc-media"><img src="assets/home/history-zh-Hant.webp" width="746" height="987" alt="本週活動總時間與每日長條圖。" loading="lazy"></div>
-        </li>
-      </ul>
-      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="上一個" aria-controls="plus-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="下一個" aria-controls="plus-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
+    <section id="plus" class="home-section tiles" aria-labelledby="plus-title">
+      <div class="section-head section-head--center"><p class="feature-label">timoji Plus · App 內購買，一次買斷</p><h2 id="plus-title">多一點自己的樣子。</h2></div>
+      <div class="bento">
+        <article class="tile tile--full">
+          <div class="tile__copy"><h3>把熟悉的日常，做成貼紙</h3><p>用自己的照片，做成熟悉的活動貼紙。</p></div>
+          <div class="tile__media tile__media--device"><div class="device"><img src="assets/home/tile-stickers-zh-Hant.webp" width="760" height="1316" alt="貼紙選單裡的「新增貼紙」與活動貼紙。" loading="lazy" decoding="async"></div></div>
+        </article>
+        <article class="tile tile--half">
+          <div class="tile__copy"><h3>一起安排日常流程</h3><p>把日常流程一次安排好。</p></div>
+          <div class="tile__media tile__media--device"><div class="device"><img src="assets/home/tile-routine-zh-Hant.webp" width="760" height="1321" alt="日常流程的活動順序與各自的時間。" loading="lazy" decoding="async"></div></div>
+        </article>
+        <article class="tile tile--half">
+          <div class="tile__copy"><h3>一起回顧</h3><p>回頭看看我們一起完成的活動。</p></div>
+          <div class="tile__media tile__media--device"><div class="device"><img src="assets/home/tile-history-zh-Hant.webp" width="760" height="1321" alt="本週活動總時間與每日長條圖。" loading="lazy" decoding="async"></div></div>
+        </article>
+      </div>
     </section>
 
-    <section class="home-section fc-section" aria-labelledby="new-title">
-      <div class="fc-head"><div><p class="feature-label">1.7.0 新功能</p><h2 id="new-title">想開始，隨時都可以。</h2></div></div>
-      <ul class="fc-track" id="new-track" tabindex="0" aria-labelledby="new-title">
-        <li class="fc">
-          <div class="fc-copy"><h3 class="fc-title">從主畫面直接開始。</h3><p class="fc-body">點小工具上的貼紙就能開始。日常流程小工具為 Plus 功能。</p></div>
-          <div class="fc-media"><img src="assets/home/widgets-zh-Hant.webp" width="640" height="965" alt="主畫面上的 timoji 小工具，顯示我的最愛貼紙與日常流程。" loading="lazy"></div>
-        </li>
-        <li class="fc">
-          <div class="fc-copy"><h3 class="fc-title">摺成書本，邊看邊安排。</h3><p class="fc-body">在 iPhone Duo 上，一邊看時間，一邊安排下一步。</p></div>
-          <div class="fc-media"><img src="assets/home/duo-zh-Hant.webp" width="800" height="617" alt="摺成書本的 iPhone Duo，一邊是時間環，一邊是貼紙。" loading="lazy"></div>
-        </li>
-      </ul>
-      <div class="fc-controls"><button class="fc-ctl" type="button" data-dir="-1" aria-label="上一個" aria-controls="new-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button><button class="fc-ctl" type="button" data-dir="1" aria-label="下一個" aria-controls="new-track"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg></button></div>
+    <section id="new" class="home-section tiles" aria-labelledby="new-title">
+      <div class="section-head section-head--center"><p class="feature-label tag">1.7.0 新功能</p><h2 id="new-title">想開始，隨時都可以。</h2></div>
+      <div class="bento">
+        <article class="tile tile--half">
+          <div class="tile__copy"><h3>從主畫面直接開始。</h3><p>點小工具上的貼紙就能開始。日常流程小工具為 Plus 功能。</p></div>
+          <div class="tile__media tile__media--device"><div class="device"><img src="assets/home/tile-widgets-zh-Hant.webp" width="760" height="1321" alt="主畫面上的 timoji 小工具，顯示我的最愛貼紙與日常流程。" loading="lazy" decoding="async"></div></div>
+        </article>
+        <article class="tile tile--half tile--wide-media">
+          <div class="tile__copy"><h3>摺成書本，邊看邊安排。</h3><p>在 iPhone Duo 上，一邊看時間，一邊安排下一步。</p></div>
+          <div class="tile__media"><img src="assets/home/tile-duo-zh-Hant.webp" width="1100" height="858" alt="摺成書本的 iPhone Duo，一邊是時間環，一邊是貼紙。" loading="lazy" decoding="async"></div>
+        </article>
+      </div>
     </section>
 
-    <section class="home-section" aria-labelledby="plans-title">
-      <div class="section-heading"><h2 id="plans-title">選擇適合你的 timoji。</h2></div>
-      <div class="table-scroll" tabindex="0">
+    <section id="compare" class="home-section compare" aria-labelledby="plans-title">
+      <div class="section-head section-head--center"><h2 id="plans-title">選擇適合你的 timoji。</h2></div>
+      <div class="compare-panel table-scroll" tabindex="0">
       <table class="comparison" aria-labelledby="plans-title">
         <thead><tr><th scope="col">功能</th><th scope="col">timoji<span>免費</span></th><th scope="col" class="plus-column">timoji Plus<span>App 內購買，一次買斷</span></th></tr></thead>
         <tbody><tr><th scope="row">視覺計時</th><td>15／30／60 分鐘</td><td>15／30／60 分鐘</td></tr>
@@ -132,26 +158,31 @@
     </section>
 
     <section class="home-section maker" aria-labelledby="maker-title">
-      <div class="maker-message">
-      <div class="ki-pills" aria-hidden="true">
-        <span class="ki-pill l5 bv" style="left:44px;top:36px"></span>
-        <span class="ki-pill l3 tb" style="left:116px;top:92px"></span>
-        <span class="ki-pill ki-pill--s l5 bv" style="left:36px;top:150px"></span>
-        <span class="ki-pill l2 ra" style="left:132px;top:196px"></span>
-        <span class="ki-pill ki-pill--s l3 ra" style="left:76px;top:232px"></span>
-        <span class="ki-pill ki-pill--s l2 tb" style="left:22px;top:260px"></span>
-        <span class="ki-pill l3 ra" style="right:120px;top:30px"></span>
-        <span class="ki-pill ki-pill--s l5 tb" style="right:44px;top:62px"></span>
-        <span class="ki-pill l5 bv" style="right:100px;top:132px"></span>
-        <span class="ki-pill ki-pill--s l2 bv" style="right:30px;top:178px"></span>
-        <span class="ki-pill l2 ra" style="right:150px;top:248px"></span>
-        <span class="ki-pill ki-pill--s l3 bv" style="right:52px;top:244px"></span>
+      <div class="tile tile--full tile--inverse" data-theme="dark">
+        <div class="tile__copy">
+          <h2 id="maker-title">從看懂時間，到自己做選擇。</h2>
+          <p class="maker-copy"><span>用看得見的時間，陪孩子一次做好一件事。</span><span>一起練習安排，也把下一步的選擇留給孩子。</span></p>
+          <p class="support-note"><a href="guide-zh-Hant.html">如何使用 timoji？閱讀使用指南 →</a></p>
+        </div>
+        <div class="ki-pills ki-pills--band" aria-hidden="true">
+        <span class="ki-pill l5 bv"></span>
+        <span class="ki-pill l3 ra"></span>
+        <span class="ki-pill l2 tb"></span>
+        <span class="ki-pill l5 tb"></span>
+        <span class="ki-pill l3 bv"></span>
+        <span class="ki-pill l2 ra"></span>
+        <span class="ki-pill l5 ra"></span>
+        <span class="ki-pill l3 tb"></span>
+        <span class="ki-pill l2 bv"></span>
+        <span class="ki-pill l5 bv"></span>
+        <span class="ki-pill l3 bv"></span>
+        <span class="ki-pill l2 tb"></span>
+        </div>
       </div>
-            <h2 id="maker-title">從看懂時間，到自己做選擇。</h2>
-      <p class="maker-copy"><span>用看得見的時間，陪孩子一次做好一件事。</span><span>一起練習安排，也把下一步的選擇留給孩子。</span></p>
-      </div>
-    <p class="support-note"><a href="guide-zh-Hant.html">如何使用 timoji？閱讀使用指南 →</a></p>
-<div class="home-links">
+    </section>
+
+    <div class="home-section home-links-section">
+      <div class="home-links">
       <a class="link-card" href="privacy-zh-Hant.html">
         <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.5 3 7.8 7.5 9.5 4.5-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m8.5 12 2.3 2.3 4.7-4.7"/></svg>
         <strong>隱私權</strong>
@@ -164,8 +195,8 @@
         <span>需要時，給你一點幫助。</span>
         <span class="fc-action" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4.5 10h11M11 5.5l4.5 4.5-4.5 4.5"/></svg></span>
       </a>
+      </div>
     </div>
-    </section>
   </main>
   <footer class="site-footer-wrap">
     <div class="site-footer shell">
