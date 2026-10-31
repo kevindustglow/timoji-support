@@ -29,6 +29,7 @@
   --text-brand: #15629a;
   --text-on-action: #2b2927;
   --text-inverse: #f7f5f0;
+  --text-disabled: #b3afa9;
   /* Borders */
   --border-subtle: #e1ddd7;
   --border-strong: #7a7773;
@@ -77,7 +78,7 @@
   :root:not([data-theme="light"]) {
     --surface: #211f1d; --surface-raised: #2b2927; --surface-sunken: #171615; --surface-inverse: #f7f5f0;
     --text-primary: #f7f5f0; --text-secondary: #c9c4bd; --text-tertiary: #a0a4a7;
-    --text-brand: #7ec7e8; --text-on-action: #2b2927; --text-inverse: #2b2927;
+    --text-brand: #7ec7e8; --text-on-action: #2b2927; --text-inverse: #2b2927; --text-disabled: #6b6864;
     --border-subtle: #454240; --border-strong: #a0a4a7; --border-focus: #7ec7e8;
     --action-secondary-hover: #2b2927;
     --logo-ink: #f7f5f0; --logo-brow: #7ec7e8;
@@ -88,7 +89,7 @@
 :root[data-theme="dark"] {
   --surface: #211f1d; --surface-raised: #2b2927; --surface-sunken: #171615; --surface-inverse: #f7f5f0;
   --text-primary: #f7f5f0; --text-secondary: #c9c4bd; --text-tertiary: #a0a4a7;
-  --text-brand: #7ec7e8; --text-on-action: #2b2927; --text-inverse: #2b2927;
+  --text-brand: #7ec7e8; --text-on-action: #2b2927; --text-inverse: #2b2927; --text-disabled: #6b6864;
   --border-subtle: #454240; --border-strong: #a0a4a7; --border-focus: #7ec7e8;
   --action-secondary-hover: #2b2927;
   --logo-ink: #f7f5f0; --logo-brow: #7ec7e8;
@@ -315,24 +316,56 @@ h2, .home-page h2 {
 }
 .product-preview a { color: var(--text-brand); text-decoration: underline; }
 
-/* ---------- Feature cards ---------- */
-.feature-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8); }
-.feature-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-6); }
-.feature-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.feature-card {
-  min-width: 0; display: flex; flex-direction: column; gap: var(--space-6);
-  padding: var(--space-6);
-  background: var(--surface-raised);
-  border: var(--stroke-hairline) solid var(--border-subtle); border-radius: var(--radius-md);
+/* ---------- Feature card row (Studio Kí. "Feature card") ---------- */
+body { overflow-x: clip; } /* the rows bleed to the viewport edge; never scroll the page sideways */
+.fc-section { --inset: calc(max(0px, (100vw - var(--content-max)) / 2) + var(--page-inset)); }
+.fc-head { margin-bottom: var(--space-12); }
+.fc-head .feature-label { margin-bottom: var(--space-3); }
+.fc-head h2 { max-width: 16em; font-size: 48px; line-height: 58px; letter-spacing: -0.96px; }
+.fc-track {
+  list-style: none; margin: 0 calc(var(--inset) * -1); padding: 0 var(--page-inset) 0 var(--inset);
+  display: flex; gap: var(--space-6);
+  overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--inset) var(--page-inset);
+  scrollbar-width: none;
 }
-.feature-visual {
-  height: 240px; padding: var(--space-4);
-  display: grid; place-items: center; overflow: hidden;
-  background: var(--surface-sunken); border-radius: var(--radius-md);
+.fc-track::-webkit-scrollbar { display: none; }
+.fc-track:focus-visible { outline-offset: -2px; border-radius: var(--radius-xl); }
+.fc {
+  position: relative; flex: none; scroll-snap-align: start;
+  width: 360px; height: 520px; padding: var(--space-8);
+  display: flex; flex-direction: column; gap: var(--space-6);
+  background: var(--surface-raised); border-radius: var(--radius-xl);
 }
-.feature-visual img { width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius-md); }
-.feature-copy h3, .home-page h3 { font-family: var(--font-sans); font-size: 20px; line-height: 28px; font-weight: 600; letter-spacing: 0; color: var(--text-primary); }
-.feature-copy > p { margin-top: var(--space-2); color: var(--text-secondary); }
+.fc-copy { display: flex; flex-direction: column; gap: var(--space-3); }
+.fc-eyebrow { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--text-secondary); }
+.fc-title, .home-page .fc-title { font-family: var(--font-sans); font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: 0; color: var(--text-primary); }
+.fc-body { color: var(--text-secondary); }
+.fc-media { flex: 1; min-height: 0; display: flex; align-items: flex-end; justify-content: center; }
+.fc-media img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: var(--radius-lg); }
+
+.fc-controls { display: none; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-6); }
+.js .fc-controls { display: flex; }
+.js .fc-controls[hidden] { display: none; }
+.fc-ctl {
+  display: inline-grid; place-items: center; width: var(--control-height); height: var(--control-height);
+  padding: 0; border: 0; border-radius: var(--radius-full);
+  background: var(--surface-sunken); color: var(--text-primary); cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.fc-ctl svg { width: var(--icon-size); height: var(--icon-size); }
+.fc-ctl:hover:not(:disabled) { background: var(--action-primary); color: var(--text-on-action); }
+.fc-ctl:active:not(:disabled) { transform: scale(0.98); }
+.fc-ctl:disabled { color: var(--text-disabled); cursor: default; }
+
+/* Round action on linked cards (decorative; the whole card is the link). */
+.fc-action {
+  position: absolute; right: var(--space-6); bottom: var(--space-6);
+  display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--radius-full);
+  background: var(--surface-sunken); color: var(--text-primary);
+  transition: background-color var(--dur-fast) var(--ease);
+}
+.fc-action svg { width: var(--icon-size); height: var(--icon-size); }
 
 /* ---------- Comparison table ---------- */
 .table-scroll {
@@ -382,21 +415,21 @@ h2, .home-page h2 {
 /* Only at 1200 px and wider, where the 640 px text column leaves 200 px or more on each side for the clusters plus the 32 px safe area. */
 @media (min-width: 1200px) { .ki-pills { display: block; } }
 
-/* ---------- Subpage cards (Privacy, Support) ---------- */
-.home-links { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); margin-top: var(--space-8); text-align: left; }
+/* ---------- Subpage cards (Privacy, Support): Feature cards with the arrow action, no media ---------- */
+.home-links { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-8); text-align: left; }
 .link-card {
-  position: relative; display: grid; grid-template-columns: 1fr auto; gap: var(--space-1) var(--space-4);
-  padding: var(--space-6) var(--space-6) var(--space-6) 72px;
+  position: relative; display: flex; flex-direction: column; gap: var(--space-3);
+  min-height: 200px; padding: var(--space-8) var(--space-8) calc(var(--space-8) + 44px);
   background: var(--surface-raised); color: var(--text-primary); text-decoration: none;
-  border: var(--stroke-hairline) solid var(--border-subtle); border-radius: var(--radius-md);
-  transition: background-color var(--dur-fast) var(--ease);
+  border-radius: var(--radius-xl);
+  transition: transform var(--dur-base) var(--ease);
 }
-.link-card:hover { background: var(--surface-sunken); }
-.link-card:focus-visible { outline-offset: 2px; border-radius: var(--radius-lg); }
-.link-card strong { font-size: 20px; line-height: 28px; font-weight: 600; }
-.link-card span { color: var(--text-secondary); }
-.link-card .arrow { grid-column: 2; grid-row: 1 / 3; align-self: center; color: var(--text-brand); font-size: 20px; }
-.link-icon { position: absolute; left: var(--space-6); top: 50%; transform: translateY(-50%); width: 28px; height: 28px; color: var(--text-brand); }
+.link-card:hover { transform: translateY(-2px); }
+.link-card:hover .fc-action { background: var(--action-primary); color: var(--text-on-action); }
+.link-card:focus-visible { outline: var(--stroke-focus) solid var(--border-focus); outline-offset: 2px; }
+.link-card strong { font-size: 24px; line-height: 32px; font-weight: 600; }
+.link-card > span:not(.fc-action) { color: var(--text-secondary); }
+.link-icon { width: 28px; height: 28px; color: var(--text-brand); margin-bottom: var(--space-1); }
 
 .support-note { font-size: 14px; line-height: 22px; color: var(--text-secondary); }
 .support-note p + p { margin-top: var(--space-1); }
@@ -496,14 +529,9 @@ h2, .home-page h2 {
 .answer p + p { margin-top: var(--space-3); }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1099.98px) {
-  .feature-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
 @media (max-width: 899.98px) {
   .hero { grid-template-columns: 1fr; gap: var(--space-12); }
   .product-preview { width: min(100%, 260px); }
-  .feature-grid, .feature-grid.two { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
-  .feature-grid { grid-template-columns: 1fr; }
   .policy-layout { grid-template-columns: 1fr; gap: var(--space-6); }
   .policy-nav { position: static; padding: var(--space-6); background: var(--surface-raised); border: var(--stroke-hairline) solid var(--border-subtle); border-radius: var(--radius-md); }
   .policy-nav ol { columns: 2; column-gap: var(--space-6); }
@@ -523,12 +551,10 @@ h2, .home-page h2 {
   h2, .home-page h2 { font-size: 28px; line-height: 36px; }
   .maker h2 { font-size: 36px; line-height: 44px; letter-spacing: -0.72px; }
   .section-heading { margin-bottom: var(--space-8); }
-  .feature-grid, .feature-grid.four, .feature-grid.two { grid-template-columns: 1fr; gap: var(--space-6); }
-  .feature-visual { height: 220px; }
+  .fc-head h2 { font-size: 32px; line-height: 40px; letter-spacing: 0; }
+  .fc { width: 300px; height: 460px; }
   .maker-message { padding: var(--space-12) 0; }
   .home-links { grid-template-columns: 1fr; gap: var(--space-4); }
-  .link-card { padding: var(--space-6) var(--space-6) var(--space-6) 64px; }
-  .link-icon { left: var(--space-4); width: 24px; height: 24px; }
   .site-footer { flex-direction: column; gap: var(--space-2); }
   .page-heading { padding-bottom: var(--space-8); }
   .page-heading h1 { font-size: 36px; line-height: 44px; letter-spacing: -0.72px; }
@@ -541,10 +567,11 @@ h2, .home-page h2 {
 
 /* ---------- System modes ---------- */
 @media (prefers-reduced-motion: reduce) {
+  .link-card:hover { transform: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 @media (forced-colors: active) {
-  .paper, .feature-card, .link-card, .button, .table-scroll, .site-header__nav a[aria-current="page"] { border: 1px solid CanvasText; }
+  .paper, .fc, .link-card, .fc-ctl, .button, .table-scroll, .site-header__nav a[aria-current="page"] { border: 1px solid CanvasText; }
   .site-header__brand, .site-header__brand .brow { color: CanvasText; fill: CanvasText; }
   .ki-pills { display: none; }
 }
