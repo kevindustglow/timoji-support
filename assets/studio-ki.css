@@ -72,6 +72,11 @@
   --tag-bg: #edf7fc;
   --tag-text: #15629a;
   --device-bezel: #2b2927;
+  /* Live Activity mock (same in both themes, like the system UI it shows) */
+  --la-bg: #171615;
+  --la-text: #f7f5f0;
+  --la-track: #454240;
+  --la-accent: #ff9500;
 
   /* Site layout */
   --content-max: 1200px;   /* Website header */
@@ -397,7 +402,6 @@ h2, .home-page h2 {
 .app-store-link { display: inline-flex; flex: 0 0 auto; padding: 12px; margin: -12px; text-decoration: none; border-radius: var(--radius-md); }
 .app-store-link img { width: auto; height: 48px; max-width: none; }
 .hero-actions .app-store-link { margin: 0; }
-.hero-video-link { font-size: 14px; line-height: 22px; }
 
 .product-preview { width: min(100%, 320px); margin: var(--space-16) auto 0; }
 .product-preview > video {
@@ -432,6 +436,33 @@ body { overflow-x: clip; } /* the rows bleed to the viewport edge; never scroll 
 .fc-body { color: var(--text-secondary); }
 .fc-media { flex: 1; min-height: 0; display: flex; align-items: flex-end; justify-content: center; }
 .fc-media img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: var(--radius-lg); }
+
+/* Feature card media: app screens in the device frame, running off the bottom of the card */
+.fc:has(.fc-media--device) { padding-bottom: 0; }
+.fc-media--device { align-items: flex-start; overflow: hidden; }
+.fc .device { width: 232px; padding: 10px 10px 0; border-radius: 40px 40px 0 0; }
+.device--crop img { border-radius: 28px 28px 0 0; }
+.fc .device { height: 100%; }
+.fc .device img { min-height: 100%; object-fit: cover; object-position: top center; }
+
+/* Live Activity card: a Dynamic Island and a Lock Screen activity, drawn in CSS */
+.fc-media--live { flex-direction: column; align-items: center; justify-content: center; gap: var(--space-6); }
+.la-island, .la-card { background: var(--la-bg); color: var(--la-text); font-family: var(--font-sans); }
+.la-island {
+  display: flex; align-items: center; justify-content: space-between; width: 208px; height: 44px; padding: 0 18px 0 8px;
+  border-radius: var(--radius-full);
+}
+.la-island img { width: 32px; height: 32px; }
+.la-time { font-size: 15px; line-height: 20px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--la-accent); }
+.la-card { display: flex; align-items: center; gap: var(--space-3); width: 100%; max-width: 296px; padding: var(--space-4); border-radius: 22px; }
+.la-card img { flex: none; width: 56px; height: 56px; }
+.la-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.la-name { font-size: 14px; line-height: 20px; font-weight: 500; }
+.la-time--big { font-size: 32px; line-height: 38px; color: var(--la-text); }
+.la-bar { display: block; height: 4px; margin-top: var(--space-1); border-radius: var(--radius-full); background: var(--la-track); overflow: hidden; }
+.la-bar span { display: block; width: 72%; height: 100%; border-radius: inherit; background: var(--la-accent); }
+.la-pause { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--la-track); }
+.la-pause svg { width: 16px; height: 16px; fill: var(--la-text); }
 
 .fc-controls { display: none; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-6); }
 .js .fc-controls { display: flex; }
@@ -503,13 +534,21 @@ body { overflow-x: clip; } /* the rows bleed to the viewport edge; never scroll 
 }
 .comparison tbody tr:last-child > * { border-bottom: 0; }
 .comparison th:first-child { width: 44%; text-align: left; padding-left: 0; }
-.comparison thead th { padding-top: 0; font-size: 20px; line-height: 28px; font-weight: 600; color: var(--text-primary); }
+.comparison thead th { padding-top: var(--space-4); font-size: 20px; line-height: 28px; font-weight: 600; color: var(--text-primary); }
 .comparison thead th:first-child { font-size: 14px; line-height: 20px; font-weight: 500; color: var(--text-secondary); }
 .comparison thead th span { display: block; font-size: 12px; line-height: 18px; font-weight: 400; color: var(--text-secondary); }
 .comparison tbody th { font-size: 16px; line-height: 24px; font-weight: 400; color: var(--text-primary); }
 .comparison td { color: var(--text-primary); }
-.comparison td > span[aria-hidden="true"] { font-size: 20px; line-height: 20px; }
-.comparison .not-included { color: var(--text-tertiary); }
+.comparison td { font-weight: 500; }
+.cmp-icon { display: inline-block; width: 24px; height: 24px; vertical-align: middle; }
+.cmp-icon--yes circle { fill: var(--action-primary); }
+.cmp-icon--yes path { stroke: var(--text-on-action); }
+.cmp-icon--no path { stroke: var(--text-tertiary); }
+/* The Plus column reads as one band, so each row is easy to compare */
+.comparison th:last-child, .comparison td:last-child { background: var(--tag-bg); }
+.comparison thead th:last-child { border-radius: var(--radius-md) var(--radius-md) 0 0; padding-top: var(--space-4); }
+.comparison tbody tr:last-child td:last-child { border-radius: 0 0 var(--radius-md) var(--radius-md); }
+.comparison thead th:last-child span { color: var(--tag-text); }
 .plan-note { max-width: var(--text-max); margin: var(--space-6) auto 0; text-align: center; font-size: 12px; line-height: 18px; color: var(--text-tertiary); }
 
 /* ---------- Closing statement: one Inverse tile ---------- */
@@ -683,6 +722,8 @@ body:not(.home-page) main.shell { max-width: calc(var(--text-max) + 2 * var(--pa
   .product-preview { width: min(100%, 260px); margin-top: var(--space-12); }
   h2, .home-page h2, .home-page main h2 { font-size: 32px; line-height: 40px; letter-spacing: 0; }
   .fc { width: 300px; height: 460px; }
+  .fc .device { width: 200px; border-radius: 36px 36px 0 0; }
+  .device--crop img { border-radius: 24px 24px 0 0; }
   .bento { grid-template-columns: 1fr; }
   .tile { padding: var(--space-12) var(--space-6) var(--space-6); }
   .tile h3, .tile--full h3 { font-size: 32px; line-height: 40px; letter-spacing: 0; }
@@ -708,7 +749,7 @@ body:not(.home-page) main.shell { max-width: calc(var(--text-max) + 2 * var(--pa
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 @media (forced-colors: active) {
-  .paper, .fc, .link-card, .fc-ctl, .button, .compare-panel, .tile, .policy-nav, .guide-content details, .product-nav__cta, .site-header__nav a[aria-current="page"] { border: 1px solid CanvasText; }
+  .paper, .fc, .link-card, .la-island, .la-card, .fc-ctl, .button, .compare-panel, .tile, .policy-nav, .guide-content details, .product-nav__cta, .site-header__nav a[aria-current="page"] { border: 1px solid CanvasText; }
   .site-header__brand, .site-header__brand .brow { color: CanvasText; fill: CanvasText; }
   .ki-pills { display: none; }
 }
