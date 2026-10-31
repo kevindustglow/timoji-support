@@ -72,8 +72,9 @@
   --header-height: 88px;
 }
 
+/* Dark theme: follows the system unless the header toggle chose a theme (html[data-theme]). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --surface: #211f1d; --surface-raised: #2b2927; --surface-sunken: #171615; --surface-inverse: #f7f5f0;
     --text-primary: #f7f5f0; --text-secondary: #c9c4bd; --text-tertiary: #a0a4a7;
     --text-brand: #7ec7e8; --text-on-action: #2b2927; --text-inverse: #2b2927;
@@ -81,8 +82,20 @@
     --action-secondary-hover: #2b2927;
     --logo-ink: #f7f5f0; --logo-brow: #7ec7e8;
     --shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.48);
+    color-scheme: dark;
   }
 }
+:root[data-theme="dark"] {
+  --surface: #211f1d; --surface-raised: #2b2927; --surface-sunken: #171615; --surface-inverse: #f7f5f0;
+  --text-primary: #f7f5f0; --text-secondary: #c9c4bd; --text-tertiary: #a0a4a7;
+  --text-brand: #7ec7e8; --text-on-action: #2b2927; --text-inverse: #2b2927;
+  --border-subtle: #454240; --border-strong: #a0a4a7; --border-focus: #7ec7e8;
+  --action-secondary-hover: #2b2927;
+  --logo-ink: #f7f5f0; --logo-brow: #7ec7e8;
+  --shadow-overlay: 0 8px 24px rgba(0, 0, 0, 0.48);
+  color-scheme: dark;
+}
+:root[data-theme="light"] { color-scheme: light; }
 @media (prefers-reduced-motion: reduce) { :root { --dur-fast: 0ms; --dur-base: 0ms; --dur-page: 0ms; } }
 
 @media (min-width: 1024px) { :root { --page-inset: 48px; } }
@@ -160,7 +173,7 @@ a:hover { text-decoration-thickness: 2px; }
 .site-header__brand .brow { fill: var(--logo-brow); }
 .studio-ki-lockup { display: block; width: 109px; height: 28px; }
 
-.site-header__nav { display: flex; align-items: center; gap: var(--space-12); }
+.site-header__nav { display: flex; align-items: center; gap: var(--space-12); margin-left: auto; }
 .site-header__nav a {
   display: inline-flex; align-items: center;
   min-height: var(--control-height); padding: 0 var(--space-2);
@@ -179,6 +192,25 @@ a:hover { text-decoration-thickness: 2px; }
 
 .site-header__menu { display: none; }
 
+/* Theme toggle: needs JavaScript, so it only appears once the page has it. */
+.site-header__theme { display: none; }
+.js .site-header__theme {
+  display: inline-grid; place-items: center; flex: none;
+  width: var(--control-height); height: var(--control-height); margin-left: var(--space-6);
+  padding: 0; border: 0; border-radius: var(--radius-md);
+  background: transparent; color: var(--text-primary); cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease);
+}
+.js .site-header__theme:hover { background: var(--action-secondary-hover); }
+.site-header__theme svg { width: var(--icon-size); height: var(--icon-size); }
+.site-header__theme .icon-sun, .site-header__theme[aria-pressed="true"] .icon-moon { display: none; }
+.site-header__theme[aria-pressed="true"] .icon-sun { display: block; }
+/* 768–1023 px: the 48 px link gap plus the theme button would not fit beside the lockup, so tighten both. */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .site-header__nav { gap: var(--space-8); }
+  .js .site-header__theme { margin-left: var(--space-2); }
+}
+
 @media (max-width: 767.98px) {
   /* Without JavaScript the links simply stack under the brand row and stay reachable. */
   .site-header__nav {
@@ -193,9 +225,10 @@ a:hover { text-decoration-thickness: 2px; }
 
   /* With JavaScript the links move behind one menu button. */
   .js .site-header__inner { flex-wrap: nowrap; }
+  .js .site-header__theme { margin-left: auto; }
   .js .site-header__menu {
     display: inline-grid; place-items: center;
-    width: var(--control-height); height: var(--control-height); margin-right: calc(var(--space-3) * -1);
+    width: var(--control-height); height: var(--control-height); margin-left: var(--space-1); margin-right: calc(var(--space-3) * -1);
     padding: 0; border: 0; border-radius: var(--radius-md);
     background: transparent; color: var(--text-primary); cursor: pointer;
     transition: background-color var(--dur-fast) var(--ease);
@@ -516,7 +549,7 @@ h2, .home-page h2 {
   .ki-pills { display: none; }
 }
 @media print {
-  .site-header__nav, .site-header__menu, .policy-nav, .skip-link, .guide-nav, .ki-pills { display: none !important; }
+  .site-header__nav, .site-header__menu, .site-header__theme, .policy-nav, .skip-link, .guide-nav, .ki-pills { display: none !important; }
   .shell { max-width: none; padding-inline: 0; }
   main { padding: 0; }
   .policy-layout { display: block; }
