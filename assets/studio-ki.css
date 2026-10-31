@@ -408,6 +408,13 @@ h2, .home-page h2 {
   width: 100%; height: auto; aspect-ratio: 886 / 1920;
   background: var(--surface-raised); border-radius: var(--radius-xl);
 }
+/* iPad landscape preview in a CSS device frame; corners concentric (outer = screen radius + bezel) */
+.product-preview--ipad {
+  --bezel: clamp(8px, 1.6vw, 16px); --screen-r: clamp(8px, 1.6vw, 16px);
+  width: min(100%, 960px); padding: var(--bezel);
+  background: var(--device-bezel); border-radius: calc(var(--screen-r) + var(--bezel));
+}
+.product-preview--ipad > video { aspect-ratio: 4 / 3; border-radius: var(--screen-r); background: #000; }
 
 /* ---------- Feature card row (Studio Kí. "Feature card") ---------- */
 body { overflow-x: clip; } /* the rows bleed to the viewport edge; never scroll the page sideways */
@@ -726,6 +733,7 @@ body:not(.home-page) main.shell { max-width: calc(var(--text-max) + 2 * var(--pa
   .hero { padding-top: calc(var(--space-16) + var(--space-16)); }
   .hero h1 { font-size: 48px; line-height: 58px; letter-spacing: -0.96px; }
   .product-preview { width: min(100%, 260px); margin-top: var(--space-12); }
+  .product-preview--ipad { width: 100%; }
   h2, .home-page h2, .home-page main h2 { font-size: 32px; line-height: 40px; letter-spacing: 0; }
   .fc { width: 300px; height: 460px; }
   .fc .device { width: 200px; border-radius: 34px 34px 0 0; }
