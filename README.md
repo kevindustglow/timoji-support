@@ -1,6 +1,6 @@
 # timoji · Studio Kí.
 
-可直接部署至 GitHub Pages 的靜態 mini-site。首頁、Privacy Policy 與 Support 共用一份 CSS，無 JavaScript、外部字體、analytics、表單或網站自行設定的 cookies。
+可直接部署至 GitHub Pages 的靜態 mini-site。所有頁面共用一份 Studio Kí. 設計系統 CSS（`assets/studio-ki.css`）；只有手機選單與 Guide 展開答案用到少量 JavaScript。沒有外部字體、analytics、表單或網站自行設定的 cookies。
 
 ## 檔案
 
@@ -12,16 +12,29 @@ timoji-support/
 ├── privacy-zh-Hant.html
 ├── support.html
 ├── support-zh-Hant.html
-├── styles.css
+├── guide.html
+├── guide-zh-Hant.html
 ├── .nojekyll
 ├── README.md
 └── assets/
+    ├── studio-ki.css              # Studio Kí. VI v03 tokens + 所有元件樣式
+    ├── site-header.js             # 手機版 header 選單（無 JS 時連結仍可用）
+    ├── studio-ki-lockup-c.svg     # Lockup C（header 內同一份 SVG inline，currentColor）
+    ├── fonts/                     # 自架字體，見 assets/fonts/README.md
+    ├── home/                      # 首頁圖片、影片、App Store badge
     ├── timoji-wordmark.svg
     ├── timoji-mark.svg
     └── timoji-mark.png
 ```
 
-SVG 是現有 timoji 品牌資產；PNG 作為 favicon 的相容備用。系統字體不需下載。
+SVG 是現有 timoji 品牌資產；PNG 作為 favicon 的相容備用。
+
+## Studio Kí. 設計系統（2026-10-31）
+
+- 顏色只寫在 `assets/studio-ki.css` 的 `:root` token 區塊（淺色、`prefers-color-scheme: dark` 深色）；元件只用語意 token。
+- Header 依 Studio Kí.「Website header」規格：88px（<768px 為 64px）、Lockup C 28px 高、Inter 16/24/600 導覽。
+- Nunito 只用在首頁主標、tagline、區塊標題與子頁 h1；其餘一律 Inter，繁中頁 Noto Sans TC 優先。
+- 字體從 Google Fonts 下載後自架在 `assets/fonts/`，因為隱私權頁寫明「網站沒有外部字體」。Noto Sans TC 只含網站目前用到的字；**新增中文文案後要重新產生子集**（步驟見 `assets/fonts/README.md`），否則新字會退回系統字體。
 
 ## 用 GitHub 網頁維護與部署
 
