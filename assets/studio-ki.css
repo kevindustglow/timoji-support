@@ -440,29 +440,35 @@ body { overflow-x: clip; } /* the rows bleed to the viewport edge; never scroll 
 /* Feature card media: app screens in the device frame, running off the bottom of the card */
 .fc:has(.fc-media--device) { padding-bottom: 0; }
 .fc-media--device { align-items: flex-start; overflow: hidden; }
-.fc .device { width: 232px; padding: 10px 10px 0; border-radius: 40px 40px 0 0; }
-.device--crop img { border-radius: 28px 28px 0 0; }
+/* Same media height in every card, anchored to the card bottom, so the device tops line up whatever the copy length */
+.fc-media--device { flex: none; height: 316px; margin-top: auto; }
+:lang(zh-Hant) .fc-media--device { height: 372px; }
+/* Concentric corners: screen radius (13.3% of the screen width, as on the device) + the 10 px bezel = outer radius */
+.fc .device { width: 232px; padding: 10px 10px 0; border-radius: 38px 38px 0 0; }
+.fc .device img { border-radius: 28px 28px 0 0; }
 .fc .device { height: 100%; }
 .fc .device img { min-height: 100%; object-fit: cover; object-position: top center; }
 
-/* Live Activity card: a Dynamic Island and a Lock Screen activity, drawn in CSS */
-.fc-media--live { flex-direction: column; align-items: center; justify-content: center; gap: var(--space-6); }
-.la-island, .la-card { background: var(--la-bg); color: var(--la-text); font-family: var(--font-sans); }
-.la-island {
-  display: flex; align-items: center; justify-content: space-between; width: 208px; height: 44px; padding: 0 18px 0 8px;
-  border-radius: var(--radius-full);
+/* Live Activity card: a Lock Screen in the device frame, drawn in CSS (same frame and corners as the other cards) */
+.fc .device .lock {
+  position: relative; display: flex; flex-direction: column; align-items: center; height: 100%;
+  padding: 10px 8px 0; border-radius: 28px 28px 0 0; overflow: hidden;
+  color: var(--la-text); font-family: var(--font-sans); text-align: center;
+  background: radial-gradient(120% 70% at 50% 0%, #6b5a4c 0%, #3a312b 45%, #1d1a18 100%);
 }
-.la-island img { width: 32px; height: 32px; }
-.la-time { font-size: 15px; line-height: 20px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--la-accent); }
-.la-card { display: flex; align-items: center; gap: var(--space-3); width: 100%; max-width: 296px; padding: var(--space-4); border-radius: 22px; }
-.la-card img { flex: none; width: 56px; height: 56px; }
-.la-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-.la-name { font-size: 14px; line-height: 20px; font-weight: 500; }
-.la-time--big { font-size: 32px; line-height: 38px; color: var(--la-text); }
-.la-bar { display: block; height: 4px; margin-top: var(--space-1); border-radius: var(--radius-full); background: var(--la-track); overflow: hidden; }
+.lock-island { flex: none; width: 72px; height: 22px; border-radius: var(--radius-full); background: #000; }
+.lock-date { margin-top: 22px; font-size: 13px; line-height: 18px; font-weight: 600; opacity: 0.85; }
+.lock-clock { font-family: var(--font-display); font-size: 68px; line-height: 72px; font-weight: 600; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+.la-card {
+  display: flex; align-items: center; gap: 10px; width: 100%; margin-top: auto; margin-bottom: 12px; padding: 12px;
+  border-radius: 20px; background: rgba(23, 22, 21, 0.72); text-align: left;
+}
+.fc .device .la-card img { flex: none; width: 44px; height: 44px; min-height: 0; border-radius: 0; object-fit: contain; }
+.la-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.la-name { font-size: 13px; line-height: 18px; font-weight: 600; }
+.la-time { font-size: 24px; line-height: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.la-bar { display: block; height: 4px; margin-top: 6px; border-radius: var(--radius-full); background: var(--la-track); overflow: hidden; }
 .la-bar span { display: block; width: 72%; height: 100%; border-radius: inherit; background: var(--la-accent); }
-.la-pause { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--la-track); }
-.la-pause svg { width: 16px; height: 16px; fill: var(--la-text); }
 
 .fc-controls { display: none; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-6); }
 .js .fc-controls { display: flex; }
@@ -540,7 +546,7 @@ body { overflow-x: clip; } /* the rows bleed to the viewport edge; never scroll 
 .comparison tbody th { font-size: 16px; line-height: 24px; font-weight: 400; color: var(--text-primary); }
 .comparison td { color: var(--text-primary); }
 .comparison td { font-weight: 500; }
-.cmp-icon { display: inline-block; width: 24px; height: 24px; vertical-align: middle; }
+.cmp-icon { display: inline-block; width: 20px; height: 20px; vertical-align: middle; }
 .cmp-icon--yes circle { fill: var(--action-primary); }
 .cmp-icon--yes path { stroke: var(--text-on-action); }
 .cmp-icon--no path { stroke: var(--text-tertiary); }
@@ -722,8 +728,10 @@ body:not(.home-page) main.shell { max-width: calc(var(--text-max) + 2 * var(--pa
   .product-preview { width: min(100%, 260px); margin-top: var(--space-12); }
   h2, .home-page h2, .home-page main h2 { font-size: 32px; line-height: 40px; letter-spacing: 0; }
   .fc { width: 300px; height: 460px; }
-  .fc .device { width: 200px; border-radius: 36px 36px 0 0; }
-  .device--crop img { border-radius: 24px 24px 0 0; }
+  .fc .device { width: 200px; border-radius: 34px 34px 0 0; }
+  .fc-media--device { height: 232px; }
+  :lang(zh-Hant) .fc-media--device { height: 280px; }
+  .fc .device img { border-radius: 24px 24px 0 0; }
   .bento { grid-template-columns: 1fr; }
   .tile { padding: var(--space-12) var(--space-6) var(--space-6); }
   .tile h3, .tile--full h3 { font-size: 32px; line-height: 40px; letter-spacing: 0; }
@@ -749,7 +757,7 @@ body:not(.home-page) main.shell { max-width: calc(var(--text-max) + 2 * var(--pa
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
 @media (forced-colors: active) {
-  .paper, .fc, .link-card, .la-island, .la-card, .fc-ctl, .button, .compare-panel, .tile, .policy-nav, .guide-content details, .product-nav__cta, .site-header__nav a[aria-current="page"] { border: 1px solid CanvasText; }
+  .paper, .fc, .link-card, .la-card, .fc-ctl, .button, .compare-panel, .tile, .policy-nav, .guide-content details, .product-nav__cta, .site-header__nav a[aria-current="page"] { border: 1px solid CanvasText; }
   .site-header__brand, .site-header__brand .brow { color: CanvasText; fill: CanvasText; }
   .ki-pills { display: none; }
 }
