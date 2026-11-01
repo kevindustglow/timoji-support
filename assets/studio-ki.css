@@ -750,6 +750,13 @@ body:not(.home-page) main.shell { max-width: calc(var(--text-max) + 2 * var(--pa
   .ki-pills--band { height: 220px; width: calc(100% + 2 * var(--space-6)); margin-inline: calc(var(--space-6) * -1); }
   .ki-pills--band .ki-pill:nth-child(6), .ki-pills--band .ki-pill:nth-child(12) { display: none; }
   .compare-panel { padding: var(--space-6) var(--space-4); }
+  /* Narrow screens: both plan columns stay in view, no sideways scrolling */
+  .comparison { min-width: 0; table-layout: fixed; font-size: 13px; line-height: 20px; }
+  .comparison th:first-child { width: 40%; }
+  .comparison th, .comparison td { padding: var(--space-3) var(--space-2); overflow-wrap: break-word; }
+  .comparison thead th { font-size: 16px; line-height: 22px; }
+  .comparison thead th span { font-size: 11px; line-height: 16px; }
+  .comparison tbody th { font-size: 14px; line-height: 20px; }
   .home-links { grid-template-columns: 1fr; gap: var(--space-4); }
   .site-footer { flex-direction: column; gap: var(--space-2); }
   .page-heading { padding-bottom: var(--space-8); }
